@@ -1,0 +1,63 @@
+<div class="img-bc">
+  <h1>WOW LAND</h1>
+
+  <form [formGroup]="playerForm" class="from">
+    <div>
+      <input
+        type="text"
+        formControlName="player1"
+        placeholder="Player 1 Name"
+      />
+    </div>
+    <div>
+      <input
+        type="text"
+        formControlName="player2"
+        placeholder="Player 2 Name"
+      />
+    </div>
+  </form>
+
+  <h3 class="choose">Choose a class :</h3>
+  <div class="cardlist">
+    <div
+      *ngFor="let classe of classType$ | async as classType"
+      class="class-card"
+      (click)="getTheClass(classe)"
+      [appClassBackground]="classe.name"
+    >
+      <!-- <img src="../../assets/wizardpng.png" alt="" /> -->
+      <p>{{ classe.name }}</p>
+    </div>
+  </div>
+
+  <div class="player-info">
+    <div class="player1">
+      <h5>Player 1</h5>
+      <div
+        *ngIf="selectedClassPlayer1"
+        class="class-card"
+        [appClassBackground]="selectedClassPlayer1.name"
+      >
+        <p *ngIf="selectedClassPlayer1">
+          {{ selectedClassPlayer1.name }}
+        </p>
+      </div>
+    </div>
+
+    <div class="player2">
+      <h5>Player 2</h5>
+      <div
+        *ngIf="selectedClassPlayer2"
+        class="class-card"
+        [appClassBackground]="selectedClassPlayer2.name"
+      >
+        <p *ngIf="selectedClassPlayer2">
+          {{ selectedClassPlayer2.name }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn-class" (click)="startGame()">START</button>
+</div>

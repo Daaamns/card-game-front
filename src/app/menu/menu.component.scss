@@ -1,0 +1,114 @@
+h1 {
+  padding-top: 35px;
+  text-align: center;
+  color: yellow;
+}
+
+form {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin: 10px;
+  input {
+    height: 40px;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+  }
+}
+
+h3 {
+  text-align: center;
+}
+
+.cardlist {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1000px;
+  flex-wrap: wrap;
+  // background-color: red;
+  margin: 20px auto;
+}
+
+.player-info {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-class {
+  display: flex;
+  margin: 0 auto;
+}
+
+.class-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // border: 1px solid black;
+  color: white;
+  height: 300px;
+  width: 230px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.4);
+  // opacity: 0.5;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.player1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  h5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(66, 64, 64);
+    width: 100px;
+    height: 25px;
+  }
+}
+.choose {
+  margin: 0 auto;
+  color: white;
+  background-color: rgb(66, 64, 64);
+  width: 150px;
+  // opacity: 0.7;
+}
+.player2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  h5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(66, 64, 64);
+    width: 100px;
+    height: 25px;
+  }
+}
+
+.btn-class {
+  width: 100px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(66, 64, 64);
+  color: yellow;
+  font-weight: bold;
+}
+
+.img-bc {
+  background-image: url("../../assets/old-building-lively-tavern-scenes.jpg");
+  min-height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  color: yellow;
+}

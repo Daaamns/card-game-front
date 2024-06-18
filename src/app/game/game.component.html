@@ -1,0 +1,80 @@
+<div class="bg-image">
+  <h2>Fight for your life</h2>
+  <div *ngIf="game$ | async as game" class="gamer">
+    <div class="player">
+      <h3>Player 1</h3>
+      <p>{{ game.player1.name }} the {{ game.player1.classType.name }}</p>
+      <p></p>
+      <div class="armor-bar-container">
+        <div
+          class="armor-bar"
+          [style.width.%]="getArmorPercentage(game.player1.armor)"
+        >
+          {{ game.player1.armor }}
+        </div>
+      </div>
+      <div class="life-bar-container">
+        <div
+          class="life-bar"
+          [style.width.%]="getLifePercentage(game.player1.life)"
+        >
+          {{ game.player1.life }}
+        </div>
+      </div>
+    </div>
+
+    <app-card-scan (scannedData)="onCardScanned($event)"></app-card-scan>
+
+    <div class="player">
+      <h3>Player 2</h3>
+      <p>{{ game.player2.name }} the {{ game.player2.classType.name }}</p>
+
+      <div class="armor-bar-container">
+        <div
+          class="armor-bar"
+          [style.width.%]="getArmorPercentage(game.player2.armor)"
+        >
+          {{ game.player2.armor }}
+        </div>
+      </div>
+      <div class="life-bar-container">
+        <div
+          class="life-bar"
+          [style.width.%]="getLifePercentage(game.player2.life)"
+        >
+          {{ game.player2.life }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="off-card">
+    <div class="yoo">
+      <p class="text">Player card 1</p>
+
+      <!-- <img src="" alt="" /> -->
+    </div>
+  </div>
+
+  <div class="card-of-players">
+    <div *ngIf="player1Card && player2Card">
+      <h3>Player 1 Card</h3>
+      <div class="card-details">
+        <p>{{ player1Card.name }}</p>
+        <p>{{ player1Card.description }}</p>
+      </div>
+    </div>
+
+    <div *ngIf="player1Card && player2Card">
+      <h3>Player 2 Card</h3>
+      <div class="card-details">
+        <p>{{ player2Card.name }}</p>
+        <p>{{ player2Card.description }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="player1Card && player2Card">
+    <button (click)="processTurn()">fight</button>
+  </div>
+</div>
